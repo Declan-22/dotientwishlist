@@ -4,5 +4,11 @@ import { defineConfig } from 'vite';
 import envCompatible from 'vite-plugin-env-compatible';
 
 export default defineConfig({
-	plugins: [tailwindcss(), sveltekit(), envCompatible()]
+  plugins: [sveltekit(), envCompatible()],
+  preview: {
+    port: Number(process.env.PORT) || 4173,
+    host: true,
+    allowedHosts: ['dotientwishlist.onrender.com']
+  }
 });
+
